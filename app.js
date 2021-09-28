@@ -152,11 +152,10 @@ var loop = setInterval(() =>{ //check toutes les 1 secondes si stop est passé �
                     divInstruMeal.innerHTML = '<b>Instructions</b> : '+instructions
                     divInstruMeal.setAttribute('class', 'instruMeal')
                     append(divContenuMealSecond, divInstruMeal)
-
                     //boucle for qui permet de créer une balise div pour chaque ingrédient récupéré (car pour les ingrédients, l'api ne retourne pas de tableau mais une variable pour chaque ingrédient)
                     for(let i = 1; meal[`strIngredient${i}`]; i++){
 
-                        const ingredients = `🥢 ${meal[`strIngredient${i}`]}`
+                        const ingredients = `🥢 ${meal[`strMeasure${i}`]} ${meal[`strIngredient${i}`]}`
                         const mealIngredient = createNode('div')
                         mealIngredient.innerText = ingredients;
                         mealIngredient.className = 'mealIngredient'
